@@ -3,66 +3,143 @@
 #include <string.h>
 
 int main (){
-	
-	//primeira parte do código
-	
-	setlocale (LC_ALL, "Portuguese");
-	char item[50];
-	int quant;
-	float valorent, margem;
-	float valorsai, invest, lucro;
-	char conf;
-
-	do {
 		
-	printf("Digite o Item:");
-	gets (item);
+	setlocale (LC_ALL, "Portuguese");
 	
-	printf("Digite a quantidade em estoque:");
-	scanf("%d", &quant);
+	// Segunda parte do cï¿½digo
+
+	int opcao;
+	char nomebusca[50];
+	printf("Pressione uma tecla para comeï¿½ar!! \n");
+	getchar ();
 	
-	printf("Digite o valor que foi pago:");
-	scanf("%f", &valorent);
+	do {
 	
-	printf("Qual será a porcentagem da margem de lucro:");
-	scanf("%f", &margem);
+	printf("\n\n<<<<<<<<<<<<<<<<<<<< MENU INICIAL >>>>>>>>>>>>>>>>>>>>\n\n");
+	printf("1 - Cadastrar novo item.\n");
+	printf("2 - Procurar item cadastrado.\n");
+	printf("3 - Vendas realizadas no mï¿½s.\n");
+	printf("4 - Consultar produtos em estoque.\n");
+	printf("5 - Relatï¿½rio.\n");
+	printf("6 - Dar baixa no estoque do mï¿½s.\n");
+	printf("7 - Calcular imposto do produto.\n");
+	printf("8 - Registrar lista de futuros produtos.\n");
+	printf("9 - Converter valor em Dolar(USD).\n");
+	printf("10 - Sair.\n\n");
 	
-			// Cálculos
+	printf("Escolha uma opï¿½ï¿½o: ");
+	scanf("%d", &opcao);
+
+	switch (opcao) {
+		case 1:
+		printf("\n[Opï¿½ï¿½o 1] Cadastrar um novo item selecionada.\n\n");
+			getchar();
+			
+		char item[50];
+		int quant;
+		float valorent, margem;
+		float valorsai, invest, lucro;
+		char conf;
+		
+		do {
+		
+		printf("Digite o Item:");
+		gets (item);
+	
+		printf("Digite a quantidade em estoque:");
+		scanf("%d", &quant);
+	
+		printf("Digite o valor que foi pago por peï¿½a:");
+		scanf("%f", &valorent);
+	
+		printf("Qual serï¿½ a porcentagem da margem de lucro:");
+		scanf("%f", &margem);
+	
+			// Cï¿½lculos
 		valorsai = valorent * (margem / 100 + 1);
 		invest = quant * valorent;  // Investimento total
-		lucro = (valorsai * quant) - invest;  // Cálculo do lucro líquido
+		lucro = (valorsai * quant) - invest;  // Cï¿½lculo do lucro lï¿½quido
 	
-	printf("\nO Item é: %s \n", item);
-	printf("A quantidade em estoque é: %d \n", quant);
-	printf("Foi pago: R$ %.2f \n", valorent);
-	printf("Com a porcentagem de %.1f%% sera vendido por: R$ %.2f \n\n", margem, valorent * (margem / 100 +1));
+		printf("\nO Item ï¿½: %s \n", item);
+		printf("A quantidade em estoque ï¿½: %d \n", quant);
+		printf("Foi pago por peï¿½a: R$ %.2f \n", valorent);
+		printf("Com a porcentagem de %.1f%% sera vendido por: R$ %.2f \n\n", margem, valorent * (margem / 100 +1));
 	
-	getchar();
-	
-	printf("Confirme com S Para Sim e N Para Não. \n");
-	scanf("%c", &conf);
 		getchar();
-	if (conf == 'S' || conf == 's' ){
+	
+		printf("Confirme com S Para Sim e N Para Nï¿½o. \n");
+		scanf("%c", &conf);
+		getchar();
+		if (conf == 'S' || conf == 's' ){
 
 		}else if (conf == 'N' || conf == 'n'){
 			printf("Vamos corrigir esses dados...\n\n");
 		} 
 		}while (conf == 'N' || conf == 'n');
 		
-//exibição final
+           //exibiï¿½ï¿½o final
  	
-	printf("\nOkay, item cadastrado.\n\n");
+		printf("\nOkay, item cadastrado.\n\n");
 	
-	printf("Item: -------------------------- %s \n", item);
-	printf("Valor: ------------------------- R$ %.2f \n", valorsai);
-	printf("Quantidade em estoque: --------- %d \n", quant);
-	printf("Seu investimento foi de: ------- R$ %.2f\n", invest = (quant * valorent));
-	printf("Previsão de faturamento é: ----- R$ %.2f \n", quant * valorsai);
-	printf("Seu lucro liquido será: -------- R$ %.2f \n", lucro);
-getchar();
+		printf("Item: -------------------------- %s \n", item);
+		printf("Valor: ------------------------- R$ %.2f \n", valorsai);
+		printf("Quantidade em estoque: --------- %d \n", quant);
+		printf("Seu investimento foi de: ------- R$ %.2f\n", invest = (quant * valorent));
+		printf("Previsï¿½o de faturamento ï¿½: ----- R$ %.2f \n", quant * valorsai);
+		printf("Seu lucro liquido serï¿½: -------- R$ %.2f \n\n\n", lucro);
+	getchar();
+	break;
+	
+	case 2:
+		printf("\n[Opï¿½ï¿½o 2] Procurar Item Cadastrado\n\n");
+		printf("Digite o Item que vocï¿½ estï¿½ procurando: \n\n");
+		getchar();
+		gets(nomebusca);
+		break;
+		
+	case 3:
+		printf("\n[Opï¿½ï¿½o 3] Vendas realizadas no mï¿½s atual. (do dia 1 ao ultimo dia)\n\n");
+		printf("Relatorio: ...\n\n");
+		
+		break;
+		
+	case 4:
+		printf("\n[Opï¿½ï¿½o 4] Produtos em estoque: \n\n");
+	
+		break;
+		
+	case 5:
+		printf("\n[Opï¿½ï¿½o 5] Relatï¿½rio dos seus produtos: \n\n");
+		break;
+		
+	case 6:
+		printf("[Opï¿½ï¿½o 6] Vamos dar baixa nos produtos deste mï¿½s e comeï¿½ar de novo.\n\n");
+		break;
+		
+	case 7:
+		printf("[Opï¿½ï¿½o 7] Vamos Calcular o imposto do seu produto.\n");
+		printf("\nPara darmos inicio a nossa calculadora, digite o produto que irï¿½ ser calculado: \n");
+		break;
+		
+	case 8:
+		printf("\n[Opï¿½ï¿½o 8] Vamos listar os produtos que vocï¿½ irar adquirir em breve e cadastrar: \n");
+	
+		break;
+		
+	case 9:
+		printf("\n[Opï¿½ï¿½o 9] Aqui estï¿½ a calculadora para converter o seu valor em Dï¿½lar(USD)\n");
+		break;
+	
+	case 10:
+		break;
+		
+	default:
+		printf("\nOpï¿½ï¿½o invalida!\nPor favor, tente novamente. :') \n\n\n");
+			break;
+	}
+	}while (opcao != 10);
 
-	//fim da primeira parte do código
-	
+
 	return 0;
 
 }
